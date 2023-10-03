@@ -1,8 +1,15 @@
+"use client";
+import { motion } from "framer-motion";
 import SectionHeading from "./section-heading";
 
 const About = () => {
    return (
-      <section className="about-section">
+      <motion.section
+         className="about-section"
+         initial={{ opacity: 0, y: 100 }}
+         animate={{ opacity: 1, y: 0 }}
+         transition={{ delay: 0.4 }}
+      >
          <SectionHeading title="About me" />
          <p className="mb-3">
             After graduating with a degree in <span className="font-medium">Accounting</span>, I
@@ -22,7 +29,7 @@ const About = () => {
             <span className="font-medium">learning new things</span>. I'm also learning how to play
             the guitar.
          </p>
-      </section>
+      </motion.section>
    );
 };
 export default About;

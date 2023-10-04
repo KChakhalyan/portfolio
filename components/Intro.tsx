@@ -8,9 +8,11 @@ import { BsArrowRight, BsLinkedin } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
 import { FaGithub } from "react-icons/fa";
 import { useSectionInView } from "@/lib/hooks";
+import { useActiveSectionContext } from "@/context/active-section-context";
 
 const Intro = () => {
    const { ref } = useSectionInView("Home", 0.5);
+   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
 
    return (
       <section ref={ref} className="name-section scroll-mt-80" id="home">
@@ -64,7 +66,14 @@ const Intro = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
          >
-            <Link href="#contact" className="contact-me-btn group">
+            <Link
+               href="#contact"
+               className="contact-me-btn group"
+               onClick={() => {
+                  setActiveSection("Contact");
+                  setTimeOfLastClick(Date.now());
+               }}
+            >
                Contact me{" "}
                <BsArrowRight className="group-hover:translate-x-1 group-hover:rotate-90 transition-all duration-300" />
             </Link>

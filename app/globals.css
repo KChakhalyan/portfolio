@@ -97,3 +97,17 @@ body {
    group-even:right-[initial] group-even:-left-40;
 }
 /* Projects Section end */
+
+/* ******************************************************************   */
+
+/* Skills Section start  */
+.skills-section {
+   @apply mb-28 max-w-[53rem] text-center leading-8 sm:mb-10 scroll-mt-28;
+}
+.skills-list {
+   @apply flex flex-wrap justify-center gap-2  text-lg text-gray-800;
+}
+.skill-list__item {
+   @apply bg-white border border-black/10 rounded-xl px-5 py-3;
+}
+/* Skills Section end */

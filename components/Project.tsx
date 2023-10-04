@@ -24,6 +24,7 @@ const Project = ({ title, description, tags, imageUrl }: ProjectProps) => {
             opacity: opacityProgess,
          }}
          className="group mb-3 sm:mb-8 last:mb-0"
+         id="project"
       >
          <section className="project-section">
             <div className="project-info">

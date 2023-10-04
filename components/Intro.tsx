@@ -7,10 +7,13 @@ import Link from "next/link";
 import { BsArrowRight, BsLinkedin } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
 import { FaGithub } from "react-icons/fa";
+import { useSectionInView } from "@/lib/hooks";
 
 const Intro = () => {
+   const { ref } = useSectionInView("Home", 0.5);
+
    return (
-      <section className="name-section">
+      <section ref={ref} className="name-section scroll-mt-80" id="home">
          {/* Profile Image start */}
          <div className="profileImg-container">
             <div className="relative">

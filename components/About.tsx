@@ -1,14 +1,19 @@
 "use client";
 import { motion } from "framer-motion";
 import SectionHeading from "./section-heading";
+import { useSectionInView } from "@/lib/hooks";
 
 const About = () => {
+   const { ref } = useSectionInView("About");
+
    return (
       <motion.section
          className="about-section"
          initial={{ opacity: 0, y: 100 }}
          animate={{ opacity: 1, y: 0 }}
          transition={{ delay: 0.4 }}
+         id="about"
+         ref={ref}
       >
          <SectionHeading title="About me" />
          <p className="mb-3">

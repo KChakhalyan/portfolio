@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -23,6 +24,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                <ActiveSectionContextProvider>
                   <Header />
                   {children}
+                  <Analytics />
                   <Toaster position="top-right" />
                </ActiveSectionContextProvider>
             </ThemeContextProvider>

@@ -4,6 +4,7 @@ import { links } from "@/lib/data";
 import Link from "next/link";
 import clsx from "clsx";
 import { useActiveSectionContext } from "@/context/active-section-context";
+import ThemeSwitch from "./ThemeSwitch";
 
 const Header = () => {
    const { activeSection, setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
@@ -46,6 +47,13 @@ const Header = () => {
                      </Link>
                   </motion.li>
                ))}
+               <motion.li
+                  initial={{ y: -100, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: 1 }}
+               >
+                  <ThemeSwitch />
+               </motion.li>
             </ul>
          </nav>
       </header>

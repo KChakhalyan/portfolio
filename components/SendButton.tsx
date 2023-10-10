@@ -6,7 +6,7 @@ const SendButton = () => {
    return (
       <button type="submit" className="group send-email-btn" disabled={pending}>
          {pending ? (
-            <div className="w-5 h-5 animate-spin rounded-full border-b-2  border-white "></div>
+            <div className="w-5 h-5 animate-spin rounded-full border-b-2  border-white"></div>
          ) : (
             <>
                Send{" "}

@@ -29,11 +29,13 @@ const Project = ({ title, description, tags, imageUrl }: ProjectProps) => {
          <section className="project-section">
             <div className="project-info">
                <h3 className="text-2xl font-semibold">{title}</h3>
-               <p className="mt-2 leading-relaxed text-gray-700">{description}</p>
+               <p className="mt-2 leading-relaxed text-gray-700 dark:text-white/70">
+                  {description}
+               </p>
                <ul className="flex flex-wrap mt-4 gap-2 sm:mt-auto">
                   {tags.map((tag, index) => (
                      <li
-                        className="bg-black/[0.7] px-3 py-1 text-[0.7rem] tracking-wider text-white rounded-full"
+                        className="bg-black/[0.7] px-3 py-1 text-[0.7rem] tracking-wider text-white rounded-full dark:text-white/70"
                         key={index}
                      >
                         {`#${tag}`}

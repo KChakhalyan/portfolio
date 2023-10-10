@@ -82,7 +82,7 @@ const Intro = () => {
                Download CV{" "}
                <HiDownload className="group-hover:translate-y-0.5 transition-all duration-300" />
             </a>
-            <div className="flex gap-2 mt-4">
+            <div className="flex gap-2">
                <a
                   href="https://www.linkedin.com/in/karen-chakhalyan-10401a88/"
                   className="social-btn group"

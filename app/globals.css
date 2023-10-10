@@ -6,6 +6,32 @@ html {
    @apply !scroll-smooth;
    --line-color: #e5e7eb;
 }
+html.dark {
+   --line-color: rgba(255, 255, 255, 0.2);
+}
+@media only screen and (min-width: 1170px) {
+   .vertical-timeline--two-columns
+      .vertical-timeline-element-content
+      .vertical-timeline-element-date {
+      left: 130% !important;
+   }
+}
+
+@media only screen and (min-width: 1170px) {
+   .vertical-timeline--two-columns
+      .vertical-timeline-element.vertical-timeline-element--right
+      .vertical-timeline-element-content
+      .vertical-timeline-element-date,
+   .vertical-timeline--two-columns
+      .vertical-timeline-element:nth-child(even):not(.vertical-timeline-element--left)
+      .vertical-timeline-element-content
+      .vertical-timeline-element-date {
+      left: auto !important;
+      right: 130% !important;
+      text-align: right !important;
+   }
+}
+
 /* Body start */
 body {
    @apply bg-gray-50 text-gray-950 relative pt-28 sm:pt-36 dark:bg-gray-900 dark:text-gray-50;
@@ -14,7 +40,7 @@ body {
 
 /* Header start */
 .header-container {
-   @apply fixed top-0 left-1/2 h-[4rem] w-full rounded-none border border-white border-opacity-40 bg-white bg-opacity-80 shadow-black/[0.3] backdrop-blur-[0.5rem] sm:top-6 sm:h-[3.25rem] sm:w-[39rem] sm:rounded-full;
+   @apply fixed top-0 left-1/2 h-[4rem] w-full rounded-none border border-white border-opacity-40 bg-white bg-opacity-80 shadow-black/[0.3] backdrop-blur-[0.5rem] sm:top-6 sm:h-[3.25rem] sm:w-[39rem] sm:rounded-full dark:bg-gray-950 dark:border-black/40 dark:bg-opacity-75;
 }
 .navigation {
    @apply flex fixed top-[0.15rem] left-1/2 -translate-x-1/2 h-12 py-2 sm:top-[1.7rem] sm:h-[initial] sm:py-0;
@@ -26,7 +52,7 @@ body {
    @apply h-3/4 flex items-center justify-center;
 }
 .menu-link {
-   @apply flex w-full items-center justify-center px-3 py-3 hover:text-gray-900 transition;
+   @apply flex w-full items-center justify-center px-3 py-3 hover:text-gray-900 transition dark:text-gray-400 dark:hover:text-gray-300;
 }
 /* Header end */
 
@@ -56,13 +82,13 @@ body {
    @apply flex flex-col sm:flex-row items-center justify-center gap-4 px-4 text-lg font-medium;
 }
 .contact-me-btn {
-   @apply bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:duration-300 hover:bg-gray-950 active:scale-105 transition-all shadow-xl shadow-gray-400/[0.2];
+   @apply bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:duration-300 hover:bg-gray-950 active:scale-105 transition-all shadow-xl dark:shadow-black/20 shadow-gray-400/[0.2];
 }
 .download-cv-btn {
-   @apply bg-white px-7 py-3 flex items-center gap-2 rounded-full focus:scale-110 hover:scale-110 hover:duration-300 active:scale-105 transition-all shadow-xl shadow-gray-400/[0.2];
+   @apply bg-white px-7 py-3 flex items-center gap-2 rounded-full focus:scale-110 hover:scale-110 hover:duration-300 active:scale-105 transition-all shadow-xl dark:shadow-black/20 shadow-gray-400/[0.2] dark:bg-white/10;
 }
 .social-btn {
-   @apply bg-white p-4 text-gray-700 flex items-center gap-2 rounded-full focus:scale-125 hover:scale-125 hover:duration-300 active:scale-105 transition-all shadow-xl shadow-gray-400/[0.2];
+   @apply bg-white p-4 text-gray-700 flex items-center gap-2 rounded-full focus:scale-125 hover:scale-125 hover:duration-300 active:scale-105 transition-all shadow-xl dark:shadow-black/20 shadow-gray-400/[0.2] dark:bg-white/10 dark:text-gray-200;
 }
 /* Name Section end */
 
@@ -78,7 +104,7 @@ body {
 
 /* Projects Section start  */
 .project-section {
-   @apply bg-gray-100 max-w-[42rem] border border-black/5 rounded-lg overflow-hidden sm:pr-8 relative sm:h-[20rem] hover:bg-gray-200 transition sm:group-even:pl-8;
+   @apply bg-gray-100 max-w-[42rem] border border-black/5 rounded-lg overflow-hidden sm:pr-8 relative sm:h-[20rem] hover:bg-gray-200 transition sm:group-even:pl-8 dark:bg-black/10 dark:hover:bg-white/10 dark:text-white/90;
 }
 .project-info {
    @apply pt-4 pb-7 px-5 sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[50%] flex flex-col h-full sm:group-even:ml-[18rem];
@@ -109,7 +135,7 @@ body {
    @apply flex flex-wrap justify-center gap-2  text-lg text-gray-800;
 }
 .skill-list__item {
-   @apply bg-white border border-black/10 rounded-xl px-5 py-3;
+   @apply bg-white border border-black/10 rounded-xl px-5 py-3 dark:bg-opacity-10 dark:text-white/80;
 }
 /* Skills Section end */
 
@@ -140,5 +166,5 @@ body {
 /* Theme Switcher icon */
 
 .theme-switch {
-   @apply bg-white/0 w-8 h-8 rounded-full flex items-center justify-center cursor-pointer transition-all;
+   @apply bg-white/0 w-8 h-8 rounded-full flex items-center justify-center cursor-pointer transition-all border-gray-300 bg-gray-100 dark:bg-gray-800 dark:text-gray-200;
 }

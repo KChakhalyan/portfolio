@@ -1,6 +1,5 @@
 "use client";
 import { usetheme } from "@/context/theme-context";
-import { useEffect, useState } from "react";
 import { BsMoon, BsSun } from "react-icons/bs";
 
 const ThemeSwitch = () => {
